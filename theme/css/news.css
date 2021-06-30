@@ -1,0 +1,12 @@
+.rows_cont{
+  border: 2px solid #eee;
+}
+.rows_cont >div{
+  padding: 5px;
+}
+.pare_spin{
+  display: none;
+}
+.content{
+  margin: auto;
+}
