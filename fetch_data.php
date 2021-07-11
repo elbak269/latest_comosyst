@@ -32,6 +32,13 @@ $stmt->execute();
 }else if(isset($_POST["add_news"]) && isset($_POST["title"]) && isset($_POST["text"]) && isset($_POST["image"]) && isset($_POST["email"])){
 
 }
+else if(isset($_POST["logout"]) && isset($_POST["ok"])){
+
+  session_start();
+  session_unset();
+  session_destroy();
+
+}
 else{
   header("location:index.php");
   exit();

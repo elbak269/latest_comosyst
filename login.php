@@ -3,7 +3,11 @@ ob_start();
 $pageTitle = "Login";
 $login ="";
 include("init.php");
+if (isset($_GET["product_id"]) && isset($_GET["type"])) {
+  
 ?>
+<input type="hidden" id="PRODUCT_ID__" name="" value="<?PHP echo $_GET["product_id"]; ?>">
+<input type="hidden" name="" id="id_type" value="<?php echo $_GET["type"]; ?>">
 
 <div class="container">
   <h1 class="text-center"> <span class="span_login" > <i class="fa fa-sign-in-alt"></i> <?php echo lang("login"); ?></span> <span class="space"> || </span><span class="span_sigh_up"> <i class="fas fa-user-plus"></i> <?php echo lang("signup"); ?></span> </h1>
@@ -77,6 +81,10 @@ include("init.php");
 
 </div>
 <?php
+}else{
+header("location:index.php");
+exit();
+}
 include($template."footer.php");
 ob_end_flush();
 

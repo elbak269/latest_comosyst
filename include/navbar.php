@@ -67,6 +67,7 @@
 
 <?php if (isset($_SESSION["client_session"])): ?>
     <a class="nav-link" href="index.php?offer=yes"><?php echo $_SESSION["client_session"];?><span class="sr-only">(current)</span></a>
+    <a id="logout" href="#"><?php echo lang("logout") ;?></a>
 <?php endif; ?>
 
 

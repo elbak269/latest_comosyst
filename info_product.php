@@ -3,13 +3,15 @@ $pageTitle = "Product Info ";
 $info_produt = "";
 include("init.php");
 
-if (isset($_GET["product_id"])) {
+if (isset($_GET["product_id"]) && isset($_GET["type"])) {
+
 ?>
 <input type="hidden" id="inpu_price" name="" value="<?php echo get_product_price ($_GET["product_id"]);  ?> ">
 <input type="hidden" id="PRODUCT_ID__" name="" value="<?PHP echo $_GET["product_id"]; ?>">
+<input type="hidden" name="" id="id_type" value="<?php echo $_GET["type"]; ?>">
 <?php
 
-if (isset($_GET["Product"]) && isset($_GET["product_id"]) && isset($_GET['WEBSITE'])) {
+if (isset($_GET["product_id"]) && $_GET["type"] =='WEBSITE') {
 ;
 ?>
 
@@ -201,12 +203,12 @@ if (isset($_GET["Product"]) && isset($_GET["product_id"]) && isset($_GET['WEBSIT
 
 }
 }
-else if(isset($_GET["Product"]) && isset($_GET["product_id"]) && isset($_GET['cams'])){
+else if( isset($_GET["product_id"]) && $_GET["type"]=="cams"){
   ?>
 
   <input type="hidden" id="pdr_id"  name="" value="<?php echo $_GET["product_id"]; ?>">
   <?php
-    if (isset($_GET["offer"])) {
+  //  if (isset($_GET["offer"])) {
 
      $stmt = $conn->prepare("SELECT  product.* ,
      website.Site_Name,website.Pages,website.Secure,
@@ -341,7 +343,7 @@ else if(isset($_GET["Product"]) && isset($_GET["product_id"]) && isset($_GET['ca
                 if (isset($_SESSION["client_session"])) {
                    ?>
                           <input type="hidden" id="client_email" value="<?php echo $_SESSION["client_session"] ?>" name="" value="">
-                          <input type="hidden" id="product_id_" value="<?php echo $_GET["Product"];?>" name="" value="">
+                          <input type="hidden" id="product_id_" value="<?php echo $_GET["product_id"];?>" name="" value="">
                             <input type="hidden" id="inpu_price" name="" value="<?php echo get_product_price ($_GET["product_id"]);  ?> ">
                    <div id="smart-button-container">
                        <div style="text-align: center;">
@@ -407,7 +409,7 @@ else if(isset($_GET["Product"]) && isset($_GET["product_id"]) && isset($_GET['ca
   </div>
    <?php
      }
-   }else{
+/*   }else{
      $stmt = $conn->prepare("SELECT product.* from product
      WHERE 	Product_ID = :product_id");
      $stmt->bindParam(":product_id",$_GET["product_id"],PDO::PARAM_STR);
@@ -419,9 +421,9 @@ else if(isset($_GET["Product"]) && isset($_GET["product_id"]) && isset($_GET['ca
    <?php
 
 }
-}
-}else if(isset($_GET["ERP"]) && isset($_GET["product_id"])){
-  if ($_GET["ERP"] == "comoapp") {
+}*/
+}else if($_GET["type"] == "ERP" && isset($_GET["product_id"])){
+
     ?>
     <h1 class="text-center">Logiciel de comptabilité <?php echo lang("comoapp"); ?></h1>
     <div class="container">
@@ -800,7 +802,7 @@ $total_price  = $price / exchange("2"); ?>
     </div>
     <?php
 
-  }
+
 
 
 

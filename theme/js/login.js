@@ -391,12 +391,12 @@ function login(){
 
       $("#result_request").html('<div class="alert alert-success text-center" role="alert">'+mylang("successfulPreogress")+'</div>');
 
+
       setTimeout(function(){
       $("#result_request").hide();
-      window.location.href = "info_product.php?Product=prd&product_id=6&cams=1&offer=5685d";
-
+      window.location.href = "info_product.php?type="+$("#id_type").val()+"&product_id="+$("#PRODUCT_ID__").val()+"";
       },3000);
-      location.reload();
+
 
   }else{
     $('html, body').animate({
@@ -457,7 +457,7 @@ function exchange_money(curency){
   return result;
 }
 
-
+/*
 function initPayPalButton() {
   var price  = $("#inpu_price").val();
   var total_price = price / exchange_money(2);
@@ -491,7 +491,7 @@ function initPayPalButton() {
   }).render('#paypal-button-container');
 }
 initPayPalButton();
-
+*/
 function success_payment(){
   $.ajax({
     url:"fetch_data.php",
@@ -499,7 +499,7 @@ function success_payment(){
     data:{
       set_succ_paypal:"set_succ_paypal",email:$("#client_email").val().trim(),product_id:$("#product_id_").val().trim()
     },success:function(data){
-        
+
     }
   })
 }

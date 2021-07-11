@@ -11,7 +11,9 @@ change_currency();
 
 
 
-
+$("#btn_buy_online").click(function(){
+  window.location.href = "login.php?type="+$("#id_type").val()+"&product_id="+$("#PRODUCT_ID__").val()+"";
+})
 
 
   function exchange_money(curency){
@@ -346,8 +348,6 @@ function success_payment(){
   })
 }
 
-$("#btn_buy_online").click(function(){
-  window.location.href = "login.php";
-})
+
 
 })

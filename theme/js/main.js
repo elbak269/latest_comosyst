@@ -27,7 +27,7 @@ function get_product(){
       res +='<div class="col-sm-12 col-md-6 col-lg-5">';
       res += '<div class="div_inside_col_ofers" data-col_ofer="dv_of'+data[i].Product_ID+'">';
 
-          res += '<a href="info_product.php?Product=prd&product_id='+data[i].Product_ID+'&WEBSITE=1&offer=5685d">';
+          res += '<a href="info_product.php?Product=prd&product_id='+data[i].Product_ID+'&type=WEBSITE&offer=5685d">';
       res += '<div class="card border-success mb-3 card_offer__" style="max-width: 18rem;">';
       res += '<div class="card-header text-center">'+data[i].Product_Name+'</div>';
       res += '<div class="card-body text-success">';
@@ -140,7 +140,7 @@ function get_offers_cams(){
 
    res  += '<div class="card border-success mb-3 text-center" style="max-width: 18rem;">';
    res  += '<div class="card-header text-center">'+data[i].Product_Name+'</div>';
-   res  += '<a href="info_product.php?Product=prd&product_id='+data[i].Product_ID+'&cams=1&offer=5685d">';
+   res  += '<a href="info_product.php?Product=prd&product_id='+data[i].Product_ID+'&type=cams&offer=5685d">';
    res  += '<div class="card-body text-success">';
    res  += '<div class="div_img">';
    res  += ' <img src="'+$("#img__in").val()+data[i].Product_Img+'"  class="img_cams" alt="">';
@@ -186,7 +186,7 @@ function get_erp_products(){
     var res ="";
  for (var i = 0; i < data.length; i++) {
    res += '  <div class="col-sm-12 col-md-6 col-lg-4 col-lg-3 col_erdp">';
-   res += '<a href="info_product.php?ERP=comoapp&product_id='+data[i].Product_ID +'">';
+   res += '<a href="info_product.php?type=ERP&product_id='+data[i].Product_ID +'">';
    res += '    <div class="card border-secondary mb-3" style="max-width: 18rem;">'
    res += '      <div class="card-header text-center">comoapp</div>';
    res +=  '      <div class="card-body text-secondary">';
@@ -232,6 +232,19 @@ function get_erp_products(){
 }
 
 
+$("#logout").click(function(){
+  $.ajax({
+    url:"fetch_data.php",
+    method:"post",
+    data:{
+      logout:"log_out",ok:"ok"
+    },success:function(data){
+      alert(data)
+      window.location.href = "index.php";
+    }
+  })
+})
+
 });
 
 
@@ -240,8 +253,6 @@ $(window).on("load",function(){
     $("body").css("overflow","auto");
     $(this).remove();
   })
-
-
 
 
 
