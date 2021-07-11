@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2021 at 11:35 PM
--- Server version: 10.1.40-MariaDB
--- PHP Version: 7.3.5
+-- Generation Time: Jul 10, 2021 at 05:23 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -304,7 +303,7 @@ CREATE TABLE `order_details` (
   `fullName` varchar(100) DEFAULT NULL,
   `mobile` varchar(25) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
-  `message` text
+  `message` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -334,7 +333,7 @@ CREATE TABLE `product` (
   `Color` varchar(25) NOT NULL,
   `Country_Made` varchar(50) NOT NULL,
   `Feature` int(11) DEFAULT NULL,
-  `Description` text,
+  `Description` text DEFAULT NULL,
   `Product_Img` varchar(100) DEFAULT NULL,
   `Website` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

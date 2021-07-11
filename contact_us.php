@@ -24,7 +24,7 @@ include("init.php");
            <img src="<?php echo $img."location.png" ?>" alt="">
          </div>
          <p class="text-center"> <strong><?php echo lang("headquarter"); ?></strong> </p>
-         <p class="text-center">Dimadjou Hamahamet Daridjou</p>
+         <p class="text-center">Moroni Coule Catelan </p>
        </div>
      </div>
 
@@ -68,7 +68,7 @@ include("init.php");
          <a href="mailto:elbak269@gmail.com"> <span class="text-center"><i class="fa fa-envelope"></i> elbak269@gamil.com</span> </a>
        </div>
        <div class="div_ins_info">
-         <a href=""> <span class="text-center"><i class="fas fa-map-marked-alt"></i> Moroni Philips</a>
+         <a href=""> <span class="text-center"><i class="fas fa-map-marked-alt"></i> Moroni Coule Castelan près de Madrasat ahli suna</a>
        </div>
      </div>
 

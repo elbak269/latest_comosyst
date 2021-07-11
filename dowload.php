@@ -96,6 +96,15 @@ if (isset($_GET["FREE_TRIAL"])) {
 
       <ol>
          <li>Cliquez Télécharger</li>
+
+         <li>
+         Installer Visual Studio 2019 (Sans Charge De Travail)
+        </li>
+
+             <li>
+               Fichier Visual Studio doit Etre Installe Avant Fichier Setupe (c'est dans le fichier d'installation)
+            </li>
+
          <li>
            Après le téléchargement et décompression  cliquez sur Fichier  (Setup)
         </li>
@@ -103,7 +112,8 @@ if (isset($_GET["FREE_TRIAL"])) {
 
           <ol>
            <strong>Configuration requise pour exécuter l'application</strong>
-            <li>Crystal Report (c'est dans le fichier d'installation)</li>
+              <li>Visual Studio</li>
+              <li>Crystal Report (c'est dans le fichier d'installation)</li>
               <li>SQL server 2019 Report (c'est dans le fichier d'installatioN .   Choisissez le Type  d'installation =>( De base ) . Lors de l'installation le Logiciel)</li>
               <li>Sql Server Management  (c'est dans le fichier d'installation)</li>
           </ol>
