@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php /*
 <!-- Messenger Chat Plugin Code -->
     <div id="fb-root"></div>
 
@@ -25,7 +26,7 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
-
+<?php */?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
   <a class="navbar-brand" href="index.php"><?php echo lang("brand"); ?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

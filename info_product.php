@@ -333,8 +333,34 @@ else if(isset($_GET["Product"]) && isset($_GET["product_id"]) && isset($_GET['ca
 
 
      <div class="fiv_form">
-            <h6 class="text-center"> <strong><?php echo lang("get_the_service"); ?> </strong> </h6>
+
+         <h6 class="text-center"> <strong><?php echo lang("get_the_service"); ?> </strong> </h6>
+       <?php
+
+
+                if (isset($_SESSION["client_session"])) {
+                   ?>
+                          <input type="hidden" id="client_email" value="<?php echo $_SESSION["client_session"] ?>" name="" value="">
+                          <input type="hidden" id="product_id_" value="<?php echo $_GET["Product"];?>" name="" value="">
+                            <input type="hidden" id="inpu_price" name="" value="<?php echo get_product_price ($_GET["product_id"]);  ?> ">
+                   <div id="smart-button-container">
+                       <div style="text-align: center;">
+                         <div id="paypal-button-container"></div>
+                       </div>
+                     </div>
+                   <script src="https://www.paypal.com/sdk/js?client-id=ASvNaabsdeh9N_nxtfsxc04_DmUWNTjHJtY-d4GGkCp-3FDFFv3AM0jnZzOHwfTdmBSKGKp3081izByQ&currency=EUR" data-sdk-integration-source="button-factory"></script>
+                   <?php
+                }else{
+                  ?>
+                  <button type="button" id="btn_buy_online" class="btn btn-primary" name="button">Acheter En Ligne</button>
+                  <?php
+                }
+
+       ?>
+
+            <?php /*  ?>
        <form class="needs-validation" novalidate>
+         <?php ?>
          <div class="form-row">
            <div class="col-md-6 mb-3">
              <label for="full_name"><?php echo lang("fullName") ?></label>
@@ -367,6 +393,11 @@ else if(isset($_GET["Product"]) && isset($_GET["product_id"]) && isset($_GET['ca
          </div>
          <button class="btn btn-primary" value="cams"  id="btn_submit"type="button"><?php echo lang("request_order"); ?></button>
        </form>
+
+       <?php */?>
+
+       <div id="div_alert" class="div-success alet alert-success text-center">
+       </div>
      </div>
      <?PHP
 

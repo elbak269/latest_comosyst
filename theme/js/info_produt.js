@@ -289,7 +289,65 @@ var total_price = price / exchange_money(2);
 */
 
 
+function initPayPalButton() {
+  var price  = $("#inpu_price").val();
+  var total_price = price / exchange_money(2);
+  var  tl_math = Math.floor(total_price);
+
+  paypal.Buttons({
+    style: {
+      shape: 'rect',
+      color: 'gold',
+      layout: 'vertical',
+      label: 'buynow',
+
+    },
+
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{"amount":{"currency_code":"EUR","value":tl_math}}]
+      });
+    },
+
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+         success_payment();
+      //  alert('Transaction completed by ' + details.payer.name.given_name + '!');
+      });
+    },
+
+    onError: function(err) {
+      console.log(err);
+    }
+  }).render('#paypal-button-container');
+}
+initPayPalButton();
 
 // END PAYAPL
+function success_payment(){
+  $.ajax({
+    url:"fetch_data.php",
+    method:"post",
+    data:{
+      set_succ_paypal:"set_succ_paypal",email:$("#client_email").val().trim(),product_id:$("#product_id_").val().trim()
+    },success:function(data){
+      $('html, body').animate({
+          scrollTop: $("#div_alert").offset().top
+      }, 1000);
+      $("#div_alert").show();
+       $("#div_alert").text(mylang("succfullAccomplished"));
+       setTimeout(function(){
+         window.location.href= "index.php";
+         $("#div_alert").hide();
+       },3000)
+
+
+    }
+  })
+}
+
+$("#btn_buy_online").click(function(){
+  window.location.href = "login.php";
+})
 
 })

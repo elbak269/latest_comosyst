@@ -51,6 +51,10 @@
 		echo '	<link rel="stylesheet" type="text/css" href="theme/css/dowload.css">';
 
 	}
+	if (isset($login)) {
+		echo '	<link rel="stylesheet" type="text/css" href="theme/css/login.css">';
+
+	}
 
 
 

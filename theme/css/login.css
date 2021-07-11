@@ -1,0 +1,54 @@
+.pare_spin{
+  display: none;
+}
+.space{
+  color: black;
+}
+
+.span_sigh_up{
+      color: #adb5bd;
+      cursor: pointer;
+}
+
+.div_for_sign_up{
+  display: none;
+}
+
+
+
+.hidden{
+display: none;
+}
+
+.span_login{
+  cursor: pointer;
+}
+
+.div_btn_dow{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+}
+
+iframe{
+  width: 100%;
+  height: 100%;
+}
+
+li{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.conatiner div{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.container{
+  margin-bottom: 50px;
+}
+.footer{
+  margin-top: 25px;
+}

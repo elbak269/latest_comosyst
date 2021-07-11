@@ -153,6 +153,9 @@ echo '<script src="theme/js/index.js"></script>';
 if (isset($dowload)) {
 echo '<script src="theme/js/dowload.js"></script>';
 }
+if (isset($login)) {
+echo '<script src="theme/js/login.js"></script>';
+}
 
 ?>
 
