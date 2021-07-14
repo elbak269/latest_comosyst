@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2021 at 05:23 PM
+-- Generation Time: Jul 14, 2021 at 09:40 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -119,7 +119,7 @@ CREATE TABLE `exchange` (
 
 INSERT INTO `exchange` (`exchange_id`, `Currency_Name`, `Curenccy_Value`) VALUES
 (1, 'KMF', '1'),
-(2, 'EUR', '490.13');
+(2, 'EUR', '500');
 
 -- --------------------------------------------------------
 
@@ -347,8 +347,8 @@ INSERT INTO `product` (`Product_ID`, `Product_Name`, `Type`, `Price`, `Brand`, `
 (2, 'Fetha', 1, '198002', NULL, '', '0', NULL, '', '', 2),
 (4, 'DS-2CE16D0T-ITPF 3.6 MM', 4, '15179.2', 1, '', 'China', NULL, '', '', NULL),
 (5, 'AD-HFW1400R-S2 ', 4, '39209.68', 3, 'Blanc', 'China', NULL, '', 'dvr_cameras.jpg', NULL),
-(6, 'elbak', 6, '172249', 1, '', '', NULL, 'Ensemble de caméras de surveillance contient 2 interne 2MP caméra et 2.8 mm objectif fixe * 2 externe 4MP caméra et 3.6 mm objectif fixe * 4 canal enregistreur prend en charge jusqu\'à 5MP', 'cams.jpg', NULL),
-(8, 'ComoApp', 7, '123216', 4, '', '', NULL, 'C\'est un programme complet qui est facile et simple à gérer toutes les activités commerciales telles que (boutiques – magasins - sociétés commerciales - expositions )\r\n', 'compapp.jpg', NULL);
+(6, 'Dhul-Hijjah', 6, '150000', 1, '', '', NULL, 'Ensemble de caméras de surveillance contient 2 interne 2MP caméra et 2.8 mm objectif fixe * 2 externe 4MP caméra et 3.6 mm objectif fixe * 4 canal enregistreur prend en charge jusqu\'à 5MP\r\nFil', 'cams.jpg', NULL),
+(8, 'ComoApp', 7, '125000', 4, '', '', NULL, 'C\'est un programme complet qui est facile et simple à gérer toutes les activités commerciales telles que (boutiques – magasins - sociétés commerciales - expositions )\r\n', 'compapp.jpg', NULL);
 
 -- --------------------------------------------------------
 
